@@ -26,7 +26,10 @@ function App() {
 
 
   function onAdoptPet(id) {
-    console.log(id)
+    const updatedPets = pets.map((pet) => {
+      return pet.id === id ? { ...pet, isAdopted: true } : pet
+    })
+    setPets(updatedPets)
   }
 
 
